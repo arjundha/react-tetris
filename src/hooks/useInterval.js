@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 //  Hook made by Dan Abramov
-export function useInterval(callback, delay) {
+export default function useInterval(callback, delay) {
   const savedCallback = useRef();
   // Remember the latest callback.
   useEffect(() => {
@@ -9,6 +9,7 @@ export function useInterval(callback, delay) {
   }, [callback]);
 
   // Set up the interval.
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     function tick() {
       savedCallback.current();

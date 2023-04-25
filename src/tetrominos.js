@@ -1,5 +1,5 @@
 // Ideally this would have been an enum if I were using TypeScript
-const TetrominoColours = {
+const TetrominoColors = {
     0: '0, 0, 0',
     I: '80, 227, 230',
     J: '36, 95, 223',
@@ -12,9 +12,9 @@ const TetrominoColours = {
 
 // Map of all the possible tetrominos (including the clean cell)
 // Shape is a 2D array of the tetromino
-// Colour is the colour of the tetromino
+// Color is the color of the tetromino
 export const TETROMINOS = {
-    0: { shape: [[0]], colour: TetrominoColours[0] }, // Clean cell,
+    0: { shape: [[0]], color: TetrominoColors[0] }, // Clean cell,
     I: {
         shape: [
                 [0, 'I', 0, 0],
@@ -22,7 +22,7 @@ export const TETROMINOS = {
                 [0, 'I', 0, 0],
                 [0, 'I', 0, 0]
             ],
-        colour: TetrominoColours.I
+        color: TetrominoColors.I
     },
     J: {
         shape: [
@@ -30,7 +30,7 @@ export const TETROMINOS = {
                 [0, 'J', 0],
                 ['J', 'J', 0]
             ],
-        colour: TetrominoColours.J
+        color: TetrominoColors.J
     },
     L: {
         shape: [
@@ -38,14 +38,14 @@ export const TETROMINOS = {
                 [0, 'L', 0],
                 [0, 'L', 'L']
             ],
-        colour: TetrominoColours.L
+        color: TetrominoColors.L
     },
     O: {
         shape: [
                 ['O', 'O'],
                 ['O', 'O']
             ],
-        colour: TetrominoColours.O
+        color: TetrominoColors.O
     },
     S: {
         shape: [
@@ -53,7 +53,7 @@ export const TETROMINOS = {
                 ['S', 'S', 0],
                 [0, 0, 0]
             ],
-        colour: TetrominoColours.S
+        color: TetrominoColors.S
     },
     T: {
         shape: [
@@ -61,7 +61,7 @@ export const TETROMINOS = {
                 ['T', 'T','T'],
                 [0, 'T', 0]
             ],
-        colour: TetrominoColours.T
+        color: TetrominoColors.T
     },
     Z: {
         shape: [
@@ -69,7 +69,7 @@ export const TETROMINOS = {
                 [0, 'Z','Z'],
                 [0, 0, 0]
             ],
-        colour: TetrominoColours.Z
+        color: TetrominoColors.Z
     }
 }
 

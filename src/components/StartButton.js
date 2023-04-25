@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const StartButton = ({ callback }) => <div>Start Game {callback}</div>;
+import {StyledStartButton} from './styles/StyledStartButton';
+
+const StartButton = ({ callback }) => 
+<StyledStartButton onClick={callback}>
+  Start Game {callback}
+</StyledStartButton>;
 
 StartButton.propTypes = {
-  callback: String,
+  callback: PropTypes.func.isRequired,
 };
 
-StartButton.defaultProps = {
-  callback: undefined,
-};
 export default StartButton;

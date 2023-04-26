@@ -7,11 +7,11 @@ import { StyledCell } from './styles/StyledCell';
 import { TETROMINOS } from '../tetrominos';
 
 const Cell = ({ type }) => (
-    <StyledCell type={type} color={TETROMINOS[type].color}/>
-)
+  <StyledCell type={type} color={TETROMINOS[type].color} />
+);
 
 Cell.propTypes = {
-    type: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Cell;

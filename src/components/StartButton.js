@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Styled Components
 import {StyledStartButton} from './styles/StyledStartButton';
 
 const StartButton = ({ callback }) => 

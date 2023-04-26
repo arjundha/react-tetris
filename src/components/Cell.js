@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Styled Components
 import { StyledCell } from './styles/StyledCell';
+
 import { TETROMINOS } from '../tetrominos';
 
 const Cell = ({ type }) => (

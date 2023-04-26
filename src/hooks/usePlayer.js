@@ -17,8 +17,8 @@ export const usePlayer = () => {
         setPlayer(prev => ({
             ...prev,
             pos: { 
-                x: (prev.pos.x += x), 
-                y: (prev.pos.y += y)
+                x: (prev.pos.x + x), 
+                y: (prev.pos.y + y)
             },
             collided,
         }));

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createStage } from '../gameHelpers';
 
-// eslint-disable-next-line no-unused-vars
 export const useStage = (player, resetPlayer) => {
     const [stage, setStage] = useState(createStage());
 
@@ -24,12 +23,17 @@ export const useStage = (player, resetPlayer) => {
                 });
             });
 
+            // Check if we have a collision
+            if (player.collided) {
+                resetPlayer();
+            }
+
             return newStage;
         };
 
         // specifying it inside here so it doesn't need to be a dependency
         setStage(prev => updateStage(prev));
-    }, [player]);
+    }, [player, resetPlayer]);
 
     return [stage, setStage];
 };

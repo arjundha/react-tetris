@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+// Styled Components
 import { StyledDisplay } from './styles/StyledDisplay';
 
 const Display = ({ gameOver, text }) => (

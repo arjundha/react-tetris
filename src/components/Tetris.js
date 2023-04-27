@@ -19,7 +19,7 @@ const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  const [player, updatePlayerPos, resetPlayer] = usePlayer();
+  const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage] = useStage(player, resetPlayer);
 
   // TODO: remove eslint overrides
@@ -57,17 +57,25 @@ const Tetris = () => {
 
   const move = ({ keyCode }) => {
     if (!gameOver) {
-      // 37 is the left arrow key
-      if (keyCode === 37) {
+      // Move left (left arrow, or A)
+      if (keyCode === 37 || keyCode === 65) {
         movePlayer(-1);
       }
-      // 39 is the right arrow key
-      else if (keyCode === 39) {
+      // Move right (right arrow, or D)
+      else if (keyCode === 39 || keyCode === 68) {
         movePlayer(1);
       }
-      // 40 is the down arrow key
-      else if (keyCode === 40) {
+      // Move down (down arrow, or S)
+      else if (keyCode === 40 || keyCode === 83) {
         dropPlayer();
+      }
+      // Rotate clockwise (up arrow, W, or Q)
+      else if (keyCode === 38 || keyCode === 87 || keyCode === 81) {
+        playerRotate(stage, 1);
+      }
+      // Rotate counter-clockwise (E)
+      else if (keyCode === 69) {
+        playerRotate(stage, 0);
       }
     }
   };

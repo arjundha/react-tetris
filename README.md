@@ -12,6 +12,8 @@ The project is still in progress, I am adding functionality to store tetriminos,
 
 Also consider adding music and SFX, as well as different colour modes, better button mapping etc.
 
+TEST COMMIT TO MAKE SURE MY BRANCH PROTECTION IS ACTUALLY WORKING LOL
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -4,6 +4,8 @@ This project was created by following the tutorial here: https://www.youtube.com
 
 If you're interested in building the project from the ground up, it is a fun tutorial that makes you brush up on components, hooks, and general React goodness.
 
+The eslint rules and prettier rules were expanded from the Airbnb Style Guide, with some modifications from myself.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

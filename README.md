@@ -1,3 +1,9 @@
+# Project Overview
+
+This project was created by following the tutorial here: https://www.youtube.com/watch?v=ZGOaCxX8HIU&ab_channel=freeCodeCamp.org
+
+If you're interested in building the project from the ground up, it is a fun tutorial that makes you brush up on components, hooks, and general React goodness.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

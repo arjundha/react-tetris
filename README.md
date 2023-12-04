@@ -10,6 +10,8 @@ The eslint rules and prettier rules were expanded from the Airbnb Style Guide, w
 
 The project is still in progress, I am adding functionality to store tetriminos, and slam tetriminos as far down as they can go. Scores and more will be added after. This is beyond the scope of the tutorial - once this README is completed (aka the stuff below is replaced with more useful steps), I'll consider the project completed!
 
+Also consider adding music and SFX, as well as different colour modes, better button mapping etc.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

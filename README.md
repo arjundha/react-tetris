@@ -1,3 +1,15 @@
+# Project Overview
+
+This project was created by following the tutorial here: https://www.youtube.com/watch?v=ZGOaCxX8HIU&ab_channel=freeCodeCamp.org
+
+If you're interested in building the project from the ground up, it is a fun tutorial that makes you brush up on components, hooks, and general React goodness.
+
+The eslint rules and prettier rules were expanded from the Airbnb Style Guide, with some modifications from myself.
+
+## Note to Self:
+
+The project is still in progress, I am adding functionality to store tetriminos, and slam tetriminos as far down as they can go. Scores and more will be added after. This is beyond the scope of the tutorial - once this README is completed (aka the stuff below is replaced with more useful steps), I'll consider the project completed!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

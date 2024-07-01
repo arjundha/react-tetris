@@ -9,6 +9,7 @@ import { StyledTetris, StyledTetrisWrapper } from './styles/StyledTetris';
 // Custom Hooks
 import { usePlayer } from '../hooks/usePlayer';
 import { useStage } from '../hooks/useStage';
+import useInterval from '../hooks/useInterval';
 
 // Components
 import Stage from './Stage';
@@ -32,6 +33,7 @@ const Tetris = () => {
   // Reset all values
   const startGame = () => {
     setStage(createStage());
+    setDropTime(1000);
     resetPlayer();
     setGameOver(false);
   };
@@ -46,12 +48,22 @@ const Tetris = () => {
         setDropTime(null);
       }
       // Do NOT move the tetromino --> it has collided
-      console.log('collided!');
       updatePlayerPos({ x: 0, y: 0, collided: true });
     }
   };
 
+  const keyUp = ({ keyCode }) => {
+    if (!gameOver) {
+      // When a player releases the down key, we restasrt the droptime interval
+      if (keyCode === 40 || keyCode === 83) {
+        setDropTime(1000);
+      }
+    }
+  };
+
   const dropPlayer = () => {
+    // When a player manually presses down, we need to pause the drop interval
+    setDropTime(null);
     drop();
   };
 
@@ -80,8 +92,17 @@ const Tetris = () => {
     }
   };
 
+  useInterval(() => {
+    drop();
+  }, dropTime);
+
   return (
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={(e) => move(e)}>
+    <StyledTetrisWrapper
+      role="button"
+      tabIndex="0"
+      onKeyDown={(e) => move(e)}
+      onKeyUp={keyUp}
+    >
       <StyledTetris>
         <Stage stage={stage} />
         <aside>

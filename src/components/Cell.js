@@ -14,4 +14,4 @@ Cell.propTypes = {
   type: PropTypes.string.isRequired,
 };
 
-export default Cell;
+export default React.memo(Cell);

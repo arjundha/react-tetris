@@ -29,7 +29,6 @@ export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
           !stage[yIndex][xIndex] ||
           stage[yIndex][xIndex][1] !== 'clear'
         ) {
-          console.log('collision detected');
           return true;
         }
       }

@@ -3,7 +3,6 @@ import { createStage } from '../gameHelpers';
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
-  // eslint-disable-next-line no-unused-vars
   const [rowsCleared, setRowsCleared] = useState(0);
 
   useEffect(() => {
@@ -51,7 +50,7 @@ export const useStage = (player, resetPlayer) => {
     setStage((prev) => updateStage(prev));
   }, [player, resetPlayer]);
 
-  return [stage, setStage];
+  return [stage, setStage, rowsCleared];
 };
 
 export default useStage;

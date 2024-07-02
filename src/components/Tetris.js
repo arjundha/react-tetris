@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 
+import useSound from 'use-sound';
 import { createStage, checkCollision } from '../gameHelpers';
 
 // Styled Components
@@ -17,7 +18,14 @@ import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
 
+// Sound Effects
+import theme from '../sfx/Tetris.mp3';
+
 const Tetris = () => {
+  // Sound Effects
+  const [play, { stop, isPlaying }] = useSound(theme, { volume: 0.5 });
+
+  // Everything else
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
@@ -41,10 +49,15 @@ const Tetris = () => {
     setScore(0);
     setRows(0);
     setLevel(0);
+    stop();
+    play();
+    // eslint-disable-next-line no-const-assign
+    isPlaying = true;
   };
 
   const drop = () => {
     // increase the levelwhen a player has cleared 10 rows
+    console.log(isPlaying);
     if (rows > (level + 1) * 10) {
       setLevel((prev) => prev + 1);
       // and increase the drop speed from setInterval
@@ -57,6 +70,7 @@ const Tetris = () => {
       if (player.pos.y < 1) {
         setGameOver(true);
         setDropTime(null);
+        stop();
       }
       // Do NOT move the tetromino --> it has collided
       updatePlayerPos({ x: 0, y: 0, collided: true });

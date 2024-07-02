@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import useSound from 'use-sound';
 import { createStage } from '../gameHelpers';
+import clearSfx from '../sfx/clear.wav';
 
 export const useStage = (player, resetPlayer) => {
   const [stage, setStage] = useState(createStage());
   const [rowsCleared, setRowsCleared] = useState(0);
+  const [play] = useSound(clearSfx);
 
   useEffect(() => {
     setRowsCleared(0);
@@ -13,6 +16,7 @@ export const useStage = (player, resetPlayer) => {
         if (row.findIndex((cell) => cell[0] === 0) === -1) {
           setRowsCleared((prev) => prev + 1);
           acc.unshift(new Array(newStage[0].length).fill([0, 'clear']));
+          play();
           return acc;
         }
         acc.push(row);
